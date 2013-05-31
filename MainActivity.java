@@ -33,18 +33,19 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View v) 
 	{
 		// TODO Auto-generated method stub
-		Random crazy=new Random(); 
+		Random rndm=new Random(); 
 		String str=edt.getText().toString();
 		char[] chstr=str.toCharArray();
-		int len,n,i;
+		int i=0,j=0;
 		char temp;
-		len=str.length();
-		for(i=0;i<len;i++)
+		int len=str.length();
+		while(i<len)
 		{
-			n=crazy.nextInt(len);		//giving limit to crazy ..till len
-			temp=chstr[n];				//swapping each character with randomly chosen one!
-			chstr[n]=chstr[i];
+			j=rndm.nextInt(len);		//giving limit to rndm ..till len
+			temp=chstr[j];				//swapping each character with randomly chosen one!
+			chstr[j]=chstr[i];
 			chstr[i]=temp;
+			i++;
 		}
 		txt.setText(chstr, 0, len);
 	}
